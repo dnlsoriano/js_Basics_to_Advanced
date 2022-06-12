@@ -1,0 +1,16 @@
+div.event {
+    width: 9em;
+    height: 12em;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    background-color: lightblue;
+}
+
+button {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+}
