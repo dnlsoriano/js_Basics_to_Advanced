@@ -1,15 +1,19 @@
-var btn = document.getElementById("btnClick");
-var mainDiv = document.querySelector("header div");
+var username = document.getElementById("username");
+var password = document.getElementById("password");
+var submitBtn = document.getElementById("submitBtn");
 
-function onBtnClick() {
-    //btn.style.backgroundColor = "lightcoral";
-    mainDiv.style.backgroundColor = "rgb(" + Math.floor(Math.random() * 255) 
-    + "," + Math.floor(Math.random() * 255) 
-    + "," + Math.floor(Math.random() * 255) + ")";
-}
+username.addEventListener('input', function() {
+    console.log(event.target.value);
+});
 
-// Option 1
-// btn.onclick = onBtnClick();
+username.addEventListener('focus', function() {
+    console.log("username focused");
+});
 
-// Option 2
-btn.addEventListener('click', onBtnClick);
+username.addEventListener('blur', function() {
+    console.log("username lost focus");
+});
+
+submitBtn.addEventListener('click', function() {
+    event.preventDefault();
+});
