@@ -1,0 +1,73 @@
+header {
+    text-align: center;
+    color: beige;
+    background-color: cadetblue;
+}
+
+#image {
+    position: relative;
+    float: left;
+    width: 500px;
+    height: auto;
+    margin-left: 20%;
+}
+
+#image img {
+    object-fit: cover;
+    float: right;
+}
+
+#main {
+    position: relative;
+    float: left;
+}
+
+#colorBlack {
+    margin-right: 1em;
+    position: relative;
+    float: left;
+    background-color: #23211f;
+}
+
+#colorRed {
+    margin-right: 1em;
+    position: relative;
+    float: left;
+    background-color: #ca3d22;
+}
+
+#colorPurple {
+    margin-right: 1em;
+    position: relative;
+    float: left;
+    background-color: #565681;
+}
+
+#colorBrown {
+    margin-right: 1em;
+    position: relative;
+    float: left;
+    background-color: #8a5362;
+}
+
+#colorPink {
+    margin-right: 1em;
+    position: relative;
+    float: left;
+    background-color: #e9c7be;
+}
+
+#watchScreen {
+    background-color: black;
+    color: azure;
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    float: right;
+    top: 34%;
+    left: 34%;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 150px;
+    font-size: 40px;
+}
