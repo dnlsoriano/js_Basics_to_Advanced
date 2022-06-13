@@ -12,13 +12,48 @@ var image = document.getElementById('image');
 
 var watchScreen = document.getElementById('watchScreen');
 
-function clock() {
-    setTimeout(function() {
-        watchScreen.innerHTML = new Date().toLocaleTimeString();
-        clock();
-    }, 1000)
+var showClock;
+var showHeartRate;
+
+var beats = document.createElement('i')
+beats.id = 'beats';
+beats.className = 'fa-solid fa-heart-pulse';
+
+var bpm = document.createElement('p');
+bpm.innerText = Math.floor(Math.random() * (86 - 50) + 50);
+
+window.onload = function() {
+    showClock = setInterval(showTime, 1000);
 }
-clock();
+
+function clock() {
+    clearInterval(showHeartRate);
+    showClock = setInterval(showTime, 1000);
+}
+
+function showTime() {
+    watchScreen.innerHTML = new Date().toLocaleTimeString().replace("AM","").replace("PM","");
+}
+
+function hearRate() {
+    clearInterval(showClock);
+    watchScreen.innerHTML = '';
+    watchScreen.appendChild(beats);
+    showHeartRate = setInterval(showBeats, 1000);
+    watchScreen.appendChild(bpm);
+}
+
+function showBeats() {
+    bpm.innerText = Math.floor(Math.random() * (86 - 50) + 50);
+}
+
+heartBtn.addEventListener('click', function() {
+    hearRate();
+})
+
+timeBtn.addEventListener('click', function() {
+    clock();
+})
 
 function changeColor(color) {
     document.getElementById('watchImg').src = 'images/' + color + '.png?t=' + new Date().getTime();
