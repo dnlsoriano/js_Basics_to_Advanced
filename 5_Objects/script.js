@@ -57,3 +57,8 @@ var newVideo = new Video("test", "mp4", "3.13", "tester");
 
 console.log(newVideo);
 console.log(newVideo.presentation());
+
+//Inheritance and Prototype Chain
+Video.prototype.producer = "Stevens";
+
+console.log(newVideo);
