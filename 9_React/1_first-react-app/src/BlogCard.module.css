@@ -1,0 +1,16 @@
+.BlogCard {
+    text-align: center;
+    margin: 16px;
+    padding: 16px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px #ccc;
+    background-color: blanchedalmond;
+}
+
+@media (min-width: 992px) {
+    .BlogCard {
+        width: 45%;
+        display: inline-block;
+    }
+}
