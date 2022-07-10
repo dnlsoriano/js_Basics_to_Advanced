@@ -1,6 +1,7 @@
 import React from "react";
 import './TestingStyles.css';
-import BlogCard from './BlogCard';
+import BlogCardComponent from './BlogCard_Component';
+import BlogCardClass from "./BlogCard_Class";
 import { isArrayEmpty} from './utils/Utils';
 
 function DynamicElements() {
@@ -8,15 +9,18 @@ function DynamicElements() {
     const blogObjList = [
         {
             title: 'Title 1',
-            description: "Oh, supercalifragilisticexpialidocious Even though the sound of it Is something quite atrocious If you say it loud enough You'll always sound precocious Supercalifragilisticexpialidocious"
+            description: "Oh, supercalifragilisticexpialidocious Even though the sound of it Is something quite atrocious If you say it loud enough You'll always sound precocious Supercalifragilisticexpialidocious",
+            likeCount: 0
         },
         {
             title: 'Title 2',
-            description: "Oh, supercalifragilisticexpialidocious Even though the sound of it Is something quite atrocious If you say it loud enough You'll always sound precocious Supercalifragilisticexpialidocious"
+            description: "Oh, supercalifragilisticexpialidocious Even though the sound of it Is something quite atrocious If you say it loud enough You'll always sound precocious Supercalifragilisticexpialidocious",
+            likeCount: 0
         },
         {
             title: 'Title 3',
-            description: "Oh, supercalifragilisticexpialidocious Even though the sound of it Is something quite atrocious If you say it loud enough You'll always sound precocious Supercalifragilisticexpialidocious"
+            description: "Oh, supercalifragilisticexpialidocious Even though the sound of it Is something quite atrocious If you say it loud enough You'll always sound precocious Supercalifragilisticexpialidocious",
+            likeCount: 0
         }
     ]
 
@@ -32,13 +36,15 @@ function DynamicElements() {
     
     const blogCardsComponents = isArrayEmpty(blogObjList) ? [] : blogObjList.map((item, pos) => {
         return (
-            <BlogCard key={pos} title={item.title} description={item.description} />
+            <BlogCardComponent key={pos} title={item.title} description={item.description} likeCount={item.likeCount} />
         )
     });
 
-    const onHideBtnClick = () => {
-        alert('Button clicked');
-    }
+    const blogCardsClass = isArrayEmpty(blogObjList) ? [] : blogObjList.map((item, pos) => {
+        return (
+            <BlogCardClass key={pos} title={item.title} description={item.description} />
+        )
+    });
 
     return (
         <div className="DynamicElements">
@@ -46,6 +52,8 @@ function DynamicElements() {
             {blogCards}
             <h2>Using components and Passing data to them with props</h2>
             {blogCardsComponents}
+            <h2>Using classes and Passing data to them with props</h2>
+            {blogCardsClass}
         </div>
     );
 }

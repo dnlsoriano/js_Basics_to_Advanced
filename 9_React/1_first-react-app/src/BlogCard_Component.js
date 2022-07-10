@@ -5,12 +5,17 @@ import { dumpLogs } from "./utils/Utils";
 import classes from './BlogCard.module.css';
 
 const BlogCard = (props) => {
+    const {pos, title, description, likeCount, onLikeBtnClick} = props;
+
     dumpLogs(props);
-    const {pos, title, description} = props;
+
     return(
         <div className={classes.BlogCard} key={pos}>
             <h3>{title}</h3>
             <p>{description}</p>
+
+            <p>Like Count: <span className={classes.likeCount}>{likeCount}</span></p>
+            <button onClick={onLikeBtnClick}>Like</button>
         </div>
     )
 }
